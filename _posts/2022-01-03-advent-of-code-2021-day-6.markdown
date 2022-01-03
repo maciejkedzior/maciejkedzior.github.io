@@ -165,6 +165,19 @@ So translating it to our approach with Linked list:
 ## But what about Part 2?
 Of course, as with any puzzle in Advent of Code there is part 2. However if we read through it, we see that with our approach it is a free star: "How many lanternfish would there be after 256 days?" We just increase number of loops and we still get our anwser with no problem. Only one major important thing: as you could see in my linked list implementation, I used variables of 64-bit size. Why is that? Because population increases in an exponentional way so the anwser for part 2 will overflow if we simply use int.
 
-Thanks for reading my article and I hope I will see you soon :D
 
+## Last words - speed of code
+If one would read Advent of Code at the 6th of December, they would quickly dive into sea of memes concerning gigantic amounts of memory needed for solution or enormous speed of execution. As I explained earlier, memory usage is abysmall - one node in linked list has the size of `int64_t` variable + size of pointer to `struct node_t` which is on `ubuntu0.18.04.1` 16 bytes.
+
+You ask about execution time for both parts? Here they are:
+* Part 1: 0.159 [ms]
+* Part 2: 0.188 [ms]
+
+Our solution is quick and has low-memory cost. Of course there probably are many different solutions, even faster, but this one is pretty darn good.
+
+
+## Summary
+We did pretty interesting puzzle from this year and learned easy and quick method to get our anwser without toasting our computer :D.
+
+Thanks for reading my article and I hope I will see you soon :D\
 Maciej
