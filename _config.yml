@@ -20,6 +20,7 @@
 
 title: Maciej Kędzior's Blog
 email: maciej.kedzior@student.uj.edu.pl
+markdown: redcarpet
 domain: maciejkedzior.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: https://maciejkedzior.github.io  # the base hostname and protocol for your site, e.g. http://example.com
 baseurl: /

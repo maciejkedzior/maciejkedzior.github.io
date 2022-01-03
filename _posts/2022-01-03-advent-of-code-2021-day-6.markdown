@@ -31,7 +31,7 @@ after using rules mentioned before we will obtain such set of Lanternfishes afte
 
 We can see that after just 18 days population of Lanternfishes expanded to 26 fishes from 5. Quick math and we see that we got demographic explosion: 520% !
 
-However it brings new problem - after 80 days there are 5934 fishes, so there is expansion of 118680 %. There is no way that with proper input we will be able to quickly obtain number of fishes after 80 days. Nothing to say about memory usage. Even if we wanted to model puzzle as a simple array of {%highlight c%} char {% endhighlight%}s of size 8 bit it is clear that array size will be enormous. There has to be other way. And there is.
+However it brings new problem - after 80 days there are 5934 fishes, so there is expansion of 118680 %. There is no way that with proper input we will be able to quickly obtain number of fishes after 80 days. Nothing to say about memory usage. Even if we wanted to model puzzle as a simple array of `char`s of size 8 bit it is clear that array size will be enormous. There has to be other way. And there is.
 
 
 ## Smart idea - counter object
@@ -78,7 +78,7 @@ If we would try to create algorithm for simple C-like array we see that "moving"
 
 We remember from Data Structure course that **Linked list** is a data container that stores nodes which contain value and pointer to next node.
 
-                            Head -> [4, ->] [3, ->] NULL
+                    Head -> [4, ->] [3, ->] NULL
 Inserting new value at the beginning of list is done in constant time, at the k-th index linear. Same with deleting nodes. 
 
 So, if we want to create some easy implementation of that data structure in C we would write code like this:
@@ -157,10 +157,10 @@ So translating it to our approach with Linked list:
 1. Initialize linked list with nine nodes, each with value 0, where i-th index represents count of i-th level Lanternfishes
 2. Properly fill linked list with data from input
 3. Each day:
-   1. Call linked_list_pop_front(head, &res) where res is an int64_t variable
-   2. Call linked_list_increment(head, 6, res)
-   3. Call linked_list_push_back(head, res)
-4. After all days pass call linked_list_sum(head) and we obtain our result!
+   1. Call `linked_list_pop_front(head, &res)` where `res` is an `int64_t` variable
+   2. Call `linked_list_increment(head, 6, res)`
+   3. Call `linked_list_push_back(head, res)`
+4. After all days pass call `linked_list_sum(head)` and we obtain our result!
 
 ## But what about Part 2?
 Of course, as with any puzzle in Advent of Code there is part 2. However if we read through it, we see that with our approach it is a free star: "How many lanternfish would there be after 256 days?" We just increase number of loops and we still get our anwser with no problem. Only one major important thing: as you could see in my linked list implementation, I used variables of 64-bit size. Why is that? Because population increases in an exponentional way so the anwser for part 2 will overflow if we simply use int.
