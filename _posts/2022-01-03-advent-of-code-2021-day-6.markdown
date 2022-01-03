@@ -178,6 +178,6 @@ Our solution is quick and has low-memory cost. Of course there probably are many
 
 ## Summary
 We did pretty interesting puzzle from this year and learned easy and quick method to get our anwser without toasting our computer :D.
-
+Full solution will be soon available at my Github `advent-of-code` repository. Stay tuned.\
 Thanks for reading my article and I hope I will see you soon :D\
 Maciej
