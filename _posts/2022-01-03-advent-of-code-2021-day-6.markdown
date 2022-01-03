@@ -78,7 +78,7 @@ If we would try to create algorithm for simple C-like array we see that "moving"
 
 We remember from Data Structure course that **Linked list** is a data container that stores nodes which contain value and pointer to next node.
 
-                    Head -> [4, ->] [3, ->] NULL
+            Head -> [4, ->] [3, ->] NULL
 Inserting new value at the beginning of list is done in constant time, at the k-th index linear. Same with deleting nodes. 
 
 So, if we want to create some easy implementation of that data structure in C we would write code like this:
@@ -166,4 +166,5 @@ So translating it to our approach with Linked list:
 Of course, as with any puzzle in Advent of Code there is part 2. However if we read through it, we see that with our approach it is a free star: "How many lanternfish would there be after 256 days?" We just increase number of loops and we still get our anwser with no problem. Only one major important thing: as you could see in my linked list implementation, I used variables of 64-bit size. Why is that? Because population increases in an exponentional way so the anwser for part 2 will overflow if we simply use int.
 
 Thanks for reading my article and I hope I will see you soon :D
+
 Maciej
