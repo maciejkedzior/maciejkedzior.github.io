@@ -25,7 +25,6 @@ Nothing much to say. Just a place for me to entertain and share my thoughts with
 github_username:  maciejkedzior
 domain: maciejkedzior.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: https://maciejkedzior.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: /MACIEJKEDZIOR/      # place folder name if the site is served in a subfolder
 
 # Build settings
 theme: minima
