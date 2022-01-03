@@ -23,7 +23,7 @@ categories: update
 Puzzle looks rather innocent. As the site suggest in an example where we have Lanternfishes have these counters:
 
 
-                                   [3,4,3,2,1]
+                                    [3,4,3,2,1]
 
 after using rules mentioned before we will obtain such set of Lanternfishes after 18 days:
 
@@ -37,28 +37,30 @@ However it brings new problem - after 80 days there are 5934 fishes, so there is
 ## Smart idea - counter object
 Let's think about our starting conditions other way. If we have input of [3,4,3,2,1] we can count how many fishes are at certain level.
 
-                            Day 0       count: [0 1 1 2 1 0 0 0 0]
-                                        level: [0 1 2 3 4 5 6 7 8]
+                        Day 0       count: [0 1 1 2 1 0 0 0 0]
+                                    level: [0 1 2 3 4 5 6 7 8]
+
 If we would try to model step from the day zero to day one we will obtain these results:
 
-                            Day 1       count: [1 1 2 1 0 0 0 0 0]
-                                        level: [0 1 2 3 4 5 6 7 8]
+                        Day 1       count: [1 1 2 1 0 0 0 0 0]
+                                    level: [0 1 2 3 4 5 6 7 8]
+
 Then few more days:
 
-                            Day 2       count: [0 2 1 0 0 0 1 0 1]
-                                        level: [0 1 2 3 4 5 6 7 8]
+                        Day 2       count: [0 2 1 0 0 0 1 0 1]
+                                    level: [0 1 2 3 4 5 6 7 8]
 
-                            Day 3       count: [2 1 0 0 0 1 0 1 0]
-                                        level: [0 1 2 3 4 5 6 7 8]
+                        Day 3       count: [2 1 0 0 0 1 0 1 0]
+                                    level: [0 1 2 3 4 5 6 7 8]
 
-                            Day 4       count: [1 0 0 0 1 0 3 0 1]
-                                        level: [0 1 2 3 4 5 6 7 8]
-                            .........................................
-                            Day 17      count: [4 3 5 3 2 2 1 1 1]
-                                        level: [0 1 2 3 4 5 6 7 8]
+                        Day 4       count: [1 0 0 0 1 0 3 0 1]
+                                    level: [0 1 2 3 4 5 6 7 8]
+                        .........................................
+                        Day 17      count: [4 3 5 3 2 2 1 1 1]
+                                    level: [0 1 2 3 4 5 6 7 8]
 
-                            Day 18      count: [3 5 3 2 2 1 5 1 4]
-                                        level: [0 1 2 3 4 5 6 7 8]
+                        Day 18      count: [3 5 3 2 2 1 5 1 4]
+                                    level: [0 1 2 3 4 5 6 7 8]
 
 Here we see something interesting. Basically day after day we "move" all counts one to left number of Lanternfishes at level zero add to level six and set level eight to that value.
 
@@ -76,7 +78,7 @@ If we would try to create algorithm for simple C-like array we see that "moving"
 
 We remember from Data Structure course that **Linked list** is a data container that stores nodes which contain value and pointer to next node.
 
-                                    Head -> [4, ->] [3, ->] NULL
+                            Head -> [4, ->] [3, ->] NULL
 Inserting new value at the beginning of list is done in constant time, at the k-th index linear. Same with deleting nodes. 
 
 So, if we want to create some easy implementation of that data structure in C we would write code like this:
